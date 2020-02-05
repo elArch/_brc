@@ -1,8 +1,15 @@
+import pytest
 from src.Pen import Pen
 
 # Default ink_value = 1000
 # Empty ink_value = 0
 # Prohibited ink_value = -1000
+
+@pytest.mark.parametrize('kwargs',
+    [prohibited_ink_kwargs = {-1000, 1.0, 'blue'},
+     prohibited_size_kwargs = {1000, -1.0, 'blue'},
+     prohibited_color_kwargs = {1000, -1.0, None}]
+)
 
 prohibited_ink_value_kwargs_1 = {
     'ink_container_value': -1000,
